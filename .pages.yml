@@ -9,7 +9,7 @@ content:
       label: 部活動ニュース
       type: collection
       path: proto-plasma/src/content/news
-      filename: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}"
+      filename: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}.md"
 
       format: yaml-frontmatter
 
