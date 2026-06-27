@@ -17,7 +17,7 @@ content:
 
       fields:
           - name: title
-            label: 記事のタイトル
+            label: タイトル
             type: string
             required: true
           - name: date
@@ -25,7 +25,7 @@ content:
             type: date
             required: true
           - name: description
-            label: 記事の概要
+            label: 概要
             type: text
           - name: image
             label: サムネイル画像
