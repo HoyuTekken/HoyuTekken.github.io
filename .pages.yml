@@ -10,7 +10,7 @@ content:
       type: collection
       path: src/content/news
       filename: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}"
-      extension: md # markdown
+      extension: markdown # markdown
       fields:
           - name: title
             label: 記事のタイトル
@@ -21,7 +21,7 @@ content:
             type: date
             required: true
           - name: description
-            label: 記事の概要（一覧ページに表示する短い説明）
+            label: 記事の概要
             type: text
           - name: image
             label: サムネイル画像
@@ -33,5 +33,5 @@ content:
 # 3. GitHub Actions
 actions:
     - name: deploy-site
-      label: サイトを手動で再ビルドして公開
+      label: サイトを更新して公開
       workflow: deploy.yml
