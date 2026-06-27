@@ -1,0 +1,37 @@
+# 1. Media
+media:
+    input: public/images/news
+    output: /images/news
+
+# 2. Content
+content:
+    - name: news
+      label: 部活動ニュース
+      type: collection
+      path: src/content/news
+      filename: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}"
+      extension: md # markdown
+      fields:
+          - name: title
+            label: 記事のタイトル
+            type: string
+            required: true
+          - name: date
+            label: 投稿日
+            type: date
+            required: true
+          - name: description
+            label: 記事の概要（一覧ページに表示する短い説明）
+            type: text
+          - name: image
+            label: サムネイル画像
+            type: image
+          - name: body
+            label: 本文
+            type: rich-text
+
+# 3. GitHub Actions
+actions:
+    - name: deploy-site
+      label: サイトを手動で再ビルドして公開
+      workflow: deploy.yml
