@@ -1,6 +1,6 @@
 # 1. Media
 media:
-    input: public/images/news
+    input: proto-plasma/public/images/news
     output: /images/news
 
 # 2. Content
@@ -8,9 +8,11 @@ content:
     - name: news
       label: 部活動ニュース
       type: collection
-      path: src/content/news
+      path: proto-plasma/src/content/news
       filename: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}"
-      extension: markdown # markdown
+
+      format: yaml-frontmatter
+
       fields:
           - name: title
             label: 記事のタイトル
@@ -26,9 +28,12 @@ content:
           - name: image
             label: サムネイル画像
             type: image
+
           - name: body
             label: 本文
-            type: rich-text
+            type: code
+            options:
+                language: markdown
 
 # 3. GitHub Actions
 actions:
